@@ -47,16 +47,16 @@ fun TataletakRow(modifier: Modifier) { // Mendefinisikan Composable Row dasar.
 }
 
 @Composable
-fun TataletakBox(modifier: Modifier) {
+fun TataletakBox(modifier: Modifier) { // Mendefinisikan Composable Box dasar.
     Box(
         modifier = modifier
             .fillMaxHeight()
-            .fillMaxWidth(),
-        contentAlignment = Alignment.Center
+            .fillMaxWidth(), contentAlignment = Alignment.Center
     ) {
-        Text(text = "Box 1")
+        Text(text = "Row 1")
         Text(text = "Column 1")
         Text(text = "Row 1")
+        Text(text = "Row 2")
         Text(text = "Column 2")
     }
 }
