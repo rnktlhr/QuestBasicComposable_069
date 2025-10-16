@@ -63,15 +63,20 @@ fun TataletakBox(modifier: Modifier) { // Mendefinisikan Composable Box dasar.
 
 @Composable
 fun TataletakColumnRow(modifier: Modifier) {
-    Column {
+    Column() { // Column utama untuk menampung baris-baris.
         // Baris 1
-        Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        Row(modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly) // Mengatur jarak horizontal untuk elemen di Baris 1.
+        {
             Text(text = "Komponen1Baris1")
             Text(text = "Komponen2Baris1")
             Text(text = "Komponen3Baris1")
         }
         // Baris 2
-        Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly) // Mengatur jarak horizontal untuk elemen di Baris 2.
+        {
             Text(text = "Komponen1Baris2")
             Text(text = "Komponen2Baris2")
             Text(text = "Komponen3Baris2")
