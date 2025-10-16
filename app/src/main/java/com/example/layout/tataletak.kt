@@ -105,6 +105,7 @@ fun TataLetakRowColumn(modifier: Modifier) {
     }
 }
 
+// Usage
 @Composable
 fun TataLetakBoxColumnRow(modifier: Modifier) {
     val gambar = painterResource(id = R.drawable.notasibalok)
@@ -116,6 +117,8 @@ fun TataLetakBoxColumnRow(modifier: Modifier) {
                 .background(color = Color.Yellow),
             contentAlignment = Alignment.Center
         ) {
+            Column {
+
             }
         }
     }
