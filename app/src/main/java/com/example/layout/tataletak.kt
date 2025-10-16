@@ -105,18 +105,32 @@ fun TataletakRowColumn(modifier: Modifier) {
 
 @Composable
 fun TataletakBoxColumnRow(modifier: Modifier) {
-    val gambar = painterResource(id = R.drawable.notasibalok)
+    val gambar = painterResource(id = R.drawable.notasibalok) // Mengambil gambar dari resource drawable
     Column {
-        Column {
-            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                Text(text = "Col1_Row1_Komponen1")
-                Text(text = "Col1_Row1_Komponen2")
-                Text(text = "Col1_Row1_Komponen3")
-            }
-            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                Text(text = "Col1_Row2_Komponen1")
-                Text(text = "Col1_Row2_Komponen2")
-                Text(text = "Col1_Row2_Komponen3")
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(110.dp)
+                .background(color = Color.Yellow),
+            contentAlignment = Alignment.Center
+        ) {
+            /* Bagian atas berisi kolom dan row */
+            Column() {
+                /* Row pertama berisi tiga teks sejajar */
+                Row(modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Text(text = "Col1_Row1_Komponen1")
+                    Text(text = "Col1_Row1_Komponen2")
+                    Text(text = "Col1_Row1_Komponen3")
+                }
+
+                /* Row kedua di bawah row pertama */
+                Row(modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly) {
+                    Text(text = "Col1_Row2_Komponen1")
+                    Text(text = "Col1_Row2_Komponen2")
+                    Text(text = "Col1_Row2_Komponen3")
+                }
             }
         }
         Spacer(modifier = Modifier.height(10.dp))
@@ -126,15 +140,21 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 .height(300.dp)
                 .background(color = Color.Cyan),
             contentAlignment = Alignment.Center
-        ) {
-            Image(painter = gambar, contentDescription = null, contentScale = ContentScale.Fit)
+        )
+        {
+            //Menampilkan gambar dari resource
+            Image(painter = gambar,
+                contentDescription = null,
+                contentScale = ContentScale.Fit)
+
+            // Teks besar My Music ditampilkan di tengah gambar
             Text(
                 text = "My Music",
                 fontSize = 50.sp,
                 color = Color.Red,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.Cursive,
-                modifier = Modifier.align(Alignment.Center)
+                modifier = Modifier.align(alignment = Alignment.Center)
             )
         }
     }
