@@ -1,4 +1,4 @@
-package com.example.mylayout
+package com.example.layout
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,31 +22,29 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.layout.R
 
 @Composable
-fun TataLetakColumn(modifier: Modifier) {
-    Column(modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)) {
+fun TataletakColumn(modifier: Modifier) { // Mendefinisikan Composable Column dasar.
+    Column(modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)) { // Mengatur tata letak vertikal (Column) dengan padding di atas, kiri, dan kanan.
         Text(text = "Komponen1")
         Text(text = "Komponen2")
         Text(text = "Komponen3")
         Text(text = "Komponen4")
     }
 }
+
 @Composable
-fun TataLetakRow(modifier: Modifier) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly
-    ) {
+fun TataletakRow(modifier: Modifier) {
+    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
         Text(text = "Komponen1")
         Text(text = "Komponen2")
         Text(text = "Komponen3")
         Text(text = "Komponen4")
     }
 }
+
 @Composable
-fun TataLetakBox(modifier: Modifier) {
+fun TataletakBox(modifier: Modifier) {
     Box(
         modifier = modifier
             .fillMaxHeight()
@@ -54,32 +52,23 @@ fun TataLetakBox(modifier: Modifier) {
         contentAlignment = Alignment.Center
     ) {
         Text(text = "Box 1")
-        Text(text = "Box 2")
-        Text(text = "Row 1")
-        Text(text = "Row 2")
         Text(text = "Column 1")
+        Text(text = "Row 1")
         Text(text = "Column 2")
     }
 }
 
 @Composable
-fun TataLetakColumnRow(modifier: Modifier) {
+fun TataletakColumnRow(modifier: Modifier) {
     Column {
         // Baris 1
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
+        Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
             Text(text = "Komponen1Baris1")
             Text(text = "Komponen2Baris1")
             Text(text = "Komponen3Baris1")
         }
-
         // Baris 2
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
+        Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
             Text(text = "Komponen1Baris2")
             Text(text = "Komponen2Baris2")
             Text(text = "Komponen3Baris2")
@@ -88,16 +77,15 @@ fun TataLetakColumnRow(modifier: Modifier) {
 }
 
 @Composable
-fun TataLetakRowColumn(modifier: Modifier) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly
-    ) {
+fun TataletakRowColumn(modifier: Modifier) {
+    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        // Kolom 1
         Column {
             Text(text = "Komponen1Kolom1")
             Text(text = "Komponen2Kolom1")
             Text(text = "Komponen3Kolom1")
         }
+        // Kolom 2
         Column {
             Text(text = "Komponen1Kolom2")
             Text(text = "Komponen2Kolom2")
@@ -107,53 +95,38 @@ fun TataLetakRowColumn(modifier: Modifier) {
 }
 
 @Composable
-fun IsiDataBoxColumnRow(modifier: Modifier) {
-    val gambar = painterResource(id = R.drawable.notasibelake)
+fun TataletakBoxColumnRow(modifier: Modifier) {
+    val gambar = painterResource(id = R.drawable.notasibalok)
     Column {
-        Box(
-            modifier = modifier
-                .fillMaxWidth()
-                .height(height = 110.dp)
-                .background(color = Color.Yellow),
-            contentAlignment = Alignment.Center
-        ) {
-            Column() {
-                Row(
-                    modifier = modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    Text(text = "Cell_Row1_Komponen1")
-                    Text(text = "Cell_Row1_Komponen2")
-                    Text(text = "Cell_Row1_Komponen3")
-                }
-                Row(
-                    modifier = modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    Text(text = "Cell_Row2_Komponen1")
-                    Text(text = "Cell_Row2_Komponen2")
-                    Text(text = "Cell_Row2_Komponen3")
-                }
+        Column {
+            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                Text(text = "Col1_Row1_Komponen1")
+                Text(text = "Col1_Row1_Komponen2")
+                Text(text = "Col1_Row1_Komponen3")
+            }
+            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                Text(text = "Col1_Row2_Komponen1")
+                Text(text = "Col1_Row2_Komponen2")
+                Text(text = "Col1_Row2_Komponen3")
             }
         }
-        Spacer(modifier = Modifier.height(height = 10.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Box(
             modifier = modifier
                 .fillMaxWidth()
-                .height(height = 300.dp)
+                .height(300.dp)
                 .background(color = Color.Cyan),
             contentAlignment = Alignment.Center
         ) {
-            Image(painter = gambar,
-                contentDescription = null,
-                contentScale = ContentScale.Fit)
-            Text(text = "My Music",
+            Image(painter = gambar, contentDescription = null, contentScale = ContentScale.Fit)
+            Text(
+                text = "My Music",
                 fontSize = 50.sp,
                 color = Color.Red,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.Cursive,
-                modifier = Modifier.align(
-                    alignment = Alignment.Center))
+                modifier = Modifier.align(Alignment.Center)
+            )
         }
     }
 }
