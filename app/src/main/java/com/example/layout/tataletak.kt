@@ -86,15 +86,16 @@ fun TataletakColumnRow(modifier: Modifier) {
 
 @Composable
 fun TataletakRowColumn(modifier: Modifier) {
-    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) // Row utama menampung dua Column, diatur berjarak merata.
+    {
         // Kolom 1
-        Column {
+        Column() {
             Text(text = "Komponen1Kolom1")
             Text(text = "Komponen2Kolom1")
             Text(text = "Komponen3Kolom1")
         }
         // Kolom 2
-        Column {
+        Column() {
             Text(text = "Komponen1Kolom2")
             Text(text = "Komponen2Kolom2")
             Text(text = "Komponen3Kolom2")
